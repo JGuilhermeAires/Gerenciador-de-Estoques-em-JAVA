@@ -1,7 +1,13 @@
-# Gerenciador-de-Estoques-em-JAVA
-Gerenciar tarefas com datas, prioridades e categorias.
+# Gerenciador de Estoques em JAVA
 
-## Integrantes
-Bruno Henrique Leite Braga - bhlb@cesar.school
-Glauco Santos Seixas Cerqueira - gssc@cesar.school
-João Guilherme Aires Chagas de Oliveira - jgaco@cesar.school
+## 👥 Integrantes
+- João Guilherme (@JGuilhermeAires)
+- Bruno Braga (@Bruno-h-Braga)
+- Glauco Santos (@glaucosantos002)
+
+## 🧑‍🏫 Disciplina
+POO - 2025.2
+
+## 🏫 Instituição
+CESAR School
+
