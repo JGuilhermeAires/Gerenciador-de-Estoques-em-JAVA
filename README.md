@@ -18,7 +18,7 @@ CESAR School
 
 ### 1️⃣ Histórias de Usuário
 - Documento PDF com as 8 histórias de usuário no padrão BDD.
-- [📄 Clique aqui para acessar as histórias](Historias do usuário Seção 1.pdf)
+- [📄 Clique aqui para acessar as histórias](Historias%20do%20usuário%20Seção%201.pdf)
 
 ---
 
