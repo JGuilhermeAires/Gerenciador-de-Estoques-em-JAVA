@@ -24,7 +24,7 @@ CESAR School
 
 ### 2️⃣ Protótipo Lo-Fi
 - Protótipo de baixa fidelidade criado no Figma, baseado nas histórias.
-- [🎨 Clique aqui para acessar o protótipo](link-do-figma)
+- [🎨 Clique aqui para acessar o protótipo]([link-do-figma](https://www.figma.com/design/zWb0R4IGBdi4vmgptayMj6/Untitled?node-id=0-1&t=phB4jmD4GaSLRdci-1))
 
 ---
 
