@@ -30,5 +30,5 @@ CESAR School
 
 ### 3️⃣ Apresentação do Protótipo
 - Screencast apresentando o protótipo no Figma.
-- [🎥 Clique aqui para assistir ao vídeo](link-do-youtube)
+- [🎥 Clique aqui para assistir ao vídeo]([link-do-youtube](https://www.youtube.com/watch?v=h2TK5ozCEmc))
 
