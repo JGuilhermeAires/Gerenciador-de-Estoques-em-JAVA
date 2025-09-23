@@ -52,6 +52,7 @@ public class ProdutoDAO {
 
         return produtos;
     }
+    
     public void update(Produto produto) {
     String sql = "UPDATE produtos SET nome = ?, tipo = ?, quantidade = ?, estoqueMinimo = ? WHERE id = ?";
 
@@ -65,6 +66,20 @@ public class ProdutoDAO {
         pstm.setInt(5, produto.getId());
 
         pstm.executeUpdate();
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+}
+
+    public void deleteById(int id) {
+    String sql = "DELETE FROM produtos WHERE id = ?";
+
+    try (Connection conn = ConnectionFactory.createConnectionToSQLServer();
+         PreparedStatement pstm = conn.prepareStatement(sql)) {
+
+        pstm.setInt(1, id);
+        pstm.executeUpdate(); // melhor usar executeUpdate para DELETE
+
     } catch (Exception e) {
         e.printStackTrace();
     }
