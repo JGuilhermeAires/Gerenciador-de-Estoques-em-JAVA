@@ -37,7 +37,7 @@ CESAR School
 ### 🚀 Entrega 2
 
 #### 1️⃣ Issue Tracker
-- Documento PDF demonstrando os erros durante a codificação.
+- Documento PDF demonstrando os erros durante o desenvolvimento.
 - [Demonstrando problemas da Entrega 2](ProblemasEnfrentados.pdf)
 
 ---
