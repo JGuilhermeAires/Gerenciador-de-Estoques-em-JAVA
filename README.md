@@ -37,8 +37,8 @@ CESAR School
 ### 🚀 Entrega 2
 
 #### 1️⃣ Issue Tracker
-- Print demonstrando o uso do GitHub Issues durante o desenvolvimento da Entrega 2.  
-- ![Demonstrando problemas](ProblemasEnfrentados.pdf)
+- Documento PDF demonstrando os erros durante a codificação da Entrega 2.
+- [Demonstrando problemas da Entrega 2](ProblemasEnfrentados.pdf)
 
 ---
 
