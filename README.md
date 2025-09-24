@@ -38,7 +38,7 @@ CESAR School
 
 #### 1️⃣ Issue Tracker
 - Print demonstrando o uso do GitHub Issues durante o desenvolvimento da Entrega 2.  
-- ![Print Issues](docs/issues-entrega02.png)
+- ![Print Issues](ProblemasEnfrentados.pdf)
 
 ---
 
