@@ -14,7 +14,7 @@ CESAR School
 
 ## 📌 Entregas do Projeto
 
-### Entrega 1
+### 🚀 Entrega 1
 
 ### 1️⃣ Histórias de Usuário
 - Documento PDF com as 8 histórias de usuário no padrão BDD.
@@ -31,4 +31,12 @@ CESAR School
 ### 3️⃣ Apresentação do Protótipo
 - Screencast apresentando o protótipo no Figma.
 - [🎥 Clique aqui para assistir ao vídeo](https://www.youtube.com/watch?v=h2TK5ozCEmc)
+
+### 🚀 Entrega 2
+
+### Issue Tracker
+![Print Issues](docs/issues-entrega02.png)
+
+### Screencast
+[🎥 Assista ao vídeo da Entrega 2](link-do-youtube)
 
