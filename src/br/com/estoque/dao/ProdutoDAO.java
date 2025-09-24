@@ -52,36 +52,36 @@ public class ProdutoDAO {
 
         return produtos;
     }
-    
+
     public void update(Produto produto) {
-    String sql = "UPDATE produtos SET nome = ?, tipo = ?, quantidade = ?, estoqueMinimo = ? WHERE id = ?";
+        String sql = "UPDATE produtos SET nome = ?, tipo = ?, quantidade = ?, estoqueMinimo = ? WHERE id = ?";
 
-    try (Connection conn = ConnectionFactory.createConnectionToSQLServer();
-         PreparedStatement pstm = conn.prepareStatement(sql)) {
+        try (Connection conn = ConnectionFactory.createConnectionToSQLServer();
+             PreparedStatement pstm = conn.prepareStatement(sql)) {
 
-        pstm.setString(1, produto.getNome());
-        pstm.setString(2, produto.getTipo());
-        pstm.setInt(3, produto.getQuantidade());
-        pstm.setInt(4, produto.getEstoqueMinimo());
-        pstm.setInt(5, produto.getId());
+            pstm.setString(1, produto.getNome());
+            pstm.setString(2, produto.getTipo());
+            pstm.setInt(3, produto.getQuantidade());
+            pstm.setInt(4, produto.getEstoqueMinimo());
+            pstm.setInt(5, produto.getId());
 
-        pstm.executeUpdate();
-    } catch (Exception e) {
-        e.printStackTrace();
+            pstm.executeUpdate();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
-}
 
     public void deleteById(int id) {
-    String sql = "DELETE FROM produtos WHERE id = ?";
+        String sql = "DELETE FROM produtos WHERE id = ?";
 
-    try (Connection conn = ConnectionFactory.createConnectionToSQLServer();
-         PreparedStatement pstm = conn.prepareStatement(sql)) {
+        try (Connection conn = ConnectionFactory.createConnectionToSQLServer();
+             PreparedStatement pstm = conn.prepareStatement(sql)) {
 
-        pstm.setInt(1, id);
-        pstm.executeUpdate(); // melhor usar executeUpdate para DELETE
+            pstm.setInt(1, id);
+            pstm.executeUpdate();
 
-    } catch (Exception e) {
-        e.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
-}
 }
