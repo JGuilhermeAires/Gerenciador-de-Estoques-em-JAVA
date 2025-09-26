@@ -20,7 +20,8 @@ public class Main {
             System.out.println("2 - Atualizar produto");
             System.out.println("3 - Deletar produto");
             System.out.println("4 - Listar todos os produtos");
-            System.out.println("5 - Sair");
+            System.out.println("5 - Calcular desconto");
+            System.out.println("6 - Sair");
             System.out.print("Escolha uma opção: ");
 
             int opcao = sc.nextInt();
@@ -40,6 +41,9 @@ public class Main {
                     listarProdutos(dao);
                     break;
                 case 5:
+                    aplicarDesconto(sc, dao);
+                    break;
+                case 6:
                     executando = false;
                     System.out.println("Saindo do sistema...");
                     break;
@@ -138,4 +142,23 @@ public class Main {
             }
         }
     }
+    private static void aplicarDesconto(Scanner sc, ProdutoDAO dao) {
+    System.out.print("Digite o ID do produto: ");
+    int id = sc.nextInt();
+
+    double preco = dao.getPrecoById(id);
+
+    if (preco == -1) {
+        System.out.println("Produto não encontrado!");
+        return;
+    }
+
+    System.out.print("Percentual de desconto (%): ");
+    double desconto = sc.nextDouble();
+
+    double valorFinal = preco - (preco * (desconto / 100.0));
+    System.out.printf("Preço original: R$ %.2f%n", preco);
+    System.out.printf("Preço com %.2f%% de desconto: R$ %.2f%n", desconto, valorFinal);
+}
+
 }

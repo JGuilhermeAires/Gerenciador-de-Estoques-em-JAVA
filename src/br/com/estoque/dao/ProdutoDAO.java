@@ -87,4 +87,25 @@ public class ProdutoDAO {
             e.printStackTrace();
         }
     }
+    
+    public double getPrecoById(int id) {
+    String sql = "SELECT preco FROM produtos WHERE id = ?";
+    double preco = -1;
+
+    try (Connection conn = ConnectionFactory.createConnectionToSQLServer();
+         PreparedStatement pstm = conn.prepareStatement(sql)) {
+
+        pstm.setInt(1, id);
+        try (ResultSet rset = pstm.executeQuery()) {
+            if (rset.next()) {
+                preco = rset.getDouble("preco");
+            }
+        }
+
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+
+    return preco;
+}
 }
