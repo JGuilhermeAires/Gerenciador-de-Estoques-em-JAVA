@@ -6,15 +6,17 @@ public class Produto {
     private String nome;
     private String tipo;
     private int quantidade;
+    private double preco;
     private int estoqueMinimo;
 
     public Produto() {}
 
-    public Produto(int id, String nome, String tipo, int quantidade, int estoqueMinimo) {
+    public Produto(int id, String nome, String tipo, int quantidade, double preco , int estoqueMinimo) {
         this.id = id;
         this.nome = nome;
         this.tipo = tipo;
         this.quantidade = quantidade;
+        this.preco = preco;
         this.estoqueMinimo = estoqueMinimo;
     }
 
@@ -45,6 +47,12 @@ public class Produto {
     public void setQuantidade(int quantidade) { 
         this.quantidade = quantidade; 
     }
+    public double getPreco() {
+        return preco;
+    }
+    public void setPreco(double preco){
+        this.preco = preco;
+    }
 
     public int getEstoqueMinimo() { 
         return estoqueMinimo; 
@@ -60,6 +68,7 @@ public class Produto {
                 ", nome='" + nome + '\'' +
                 ", tipo='" + tipo + '\'' +
                 ", quantidade=" + quantidade +
+                ", preco=" + preco +
                 ", estoqueMinimo=" + estoqueMinimo +
                 '}';
     }

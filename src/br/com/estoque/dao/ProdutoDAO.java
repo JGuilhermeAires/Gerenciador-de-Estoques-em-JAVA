@@ -12,7 +12,7 @@ import br.com.estoque.factory.ConnectionFactory;
 public class ProdutoDAO {
 
     public void save(Produto produto) {
-        String sql = "INSERT INTO produtos (nome, tipo, quantidade, estoqueMinimo) VALUES (?, ?, ?, ?)";
+        String sql = "INSERT INTO produtos (nome, tipo, quantidade, preco, estoqueMinimo) VALUES (?, ?, ?, ? ,?)";
 
         try (Connection conn = ConnectionFactory.createConnectionToSQLServer();
              PreparedStatement pstm = conn.prepareStatement(sql)) {
@@ -20,7 +20,8 @@ public class ProdutoDAO {
             pstm.setString(1, produto.getNome());
             pstm.setString(2, produto.getTipo());
             pstm.setInt(3, produto.getQuantidade());
-            pstm.setInt(4, produto.getEstoqueMinimo());
+            pstm.setDouble(4, produto.getPreco());
+            pstm.setInt(5, produto.getEstoqueMinimo());
 
             pstm.executeUpdate();
         } catch (Exception e) {
@@ -42,6 +43,7 @@ public class ProdutoDAO {
                 produto.setNome(rset.getString("nome"));
                 produto.setTipo(rset.getString("tipo"));
                 produto.setQuantidade(rset.getInt("quantidade"));
+                produto.setPreco(rset.getDouble("preco"));
                 produto.setEstoqueMinimo(rset.getInt("estoqueMinimo"));
 
                 produtos.add(produto);
@@ -54,7 +56,7 @@ public class ProdutoDAO {
     }
 
     public void update(Produto produto) {
-        String sql = "UPDATE produtos SET nome = ?, tipo = ?, quantidade = ?, estoqueMinimo = ? WHERE id = ?";
+        String sql = "UPDATE produtos SET nome = ?, tipo = ?, quantidade = ?, preco = ?, estoqueMinimo = ? WHERE id = ?";
 
         try (Connection conn = ConnectionFactory.createConnectionToSQLServer();
              PreparedStatement pstm = conn.prepareStatement(sql)) {
@@ -62,8 +64,9 @@ public class ProdutoDAO {
             pstm.setString(1, produto.getNome());
             pstm.setString(2, produto.getTipo());
             pstm.setInt(3, produto.getQuantidade());
-            pstm.setInt(4, produto.getEstoqueMinimo());
-            pstm.setInt(5, produto.getId());
+            pstm.setDouble(4, produto.getPreco());
+            pstm.setInt(5, produto.getEstoqueMinimo());
+            pstm.setInt(6, produto.getId());
 
             pstm.executeUpdate();
         } catch (Exception e) {

@@ -60,6 +60,9 @@ public class Main {
         System.out.print("Quantidade: ");
         int quantidade = sc.nextInt();
 
+        System.out.print("Preço: ");
+        double preco = sc.nextDouble();
+
         System.out.print("Estoque mínimo: ");
         int estoqueMin = sc.nextInt();
         sc.nextLine(); 
@@ -68,6 +71,7 @@ public class Main {
         produto.setNome(nome);
         produto.setTipo(tipo);
         produto.setQuantidade(quantidade);
+        produto.setPreco(preco);
         produto.setEstoqueMinimo(estoqueMin);
 
         dao.save(produto);
@@ -88,6 +92,9 @@ public class Main {
         System.out.print("Nova quantidade: ");
         int quantidade = sc.nextInt();
 
+        System.out.print("Novo preço: ");
+        int preco = sc.nextInt();
+
         System.out.print("Novo estoque mínimo: ");
         int estoqueMin = sc.nextInt();
         sc.nextLine();
@@ -97,6 +104,7 @@ public class Main {
         produto.setNome(nome);
         produto.setTipo(tipo);
         produto.setQuantidade(quantidade);
+        produto.setPreco(preco);
         produto.setEstoqueMinimo(estoqueMin);
 
         dao.update(produto);
@@ -124,6 +132,7 @@ public class Main {
                     " | Nome: " + p.getNome() +
                     " | Tipo: " + p.getTipo() +
                     " | Quantidade: " + p.getQuantidade() +
+                    " | Preço: " + p.getPreco() +
                     " | Estoque Mínimo: " + p.getEstoqueMinimo()
                 );
             }
