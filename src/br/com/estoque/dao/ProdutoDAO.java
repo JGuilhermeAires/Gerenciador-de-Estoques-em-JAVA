@@ -12,7 +12,11 @@ import br.com.estoque.factory.ConnectionFactory;
 public class ProdutoDAO {
 
     public void save(Produto produto) {
-        String sql = "INSERT INTO produtos (nome, tipo, quantidade, preco, estoqueMinimo, corredor, prateleira, posicao) VALUES (?, ?, ?, ? ,?, ?, ?, ?)";
+        String sql = """
+            INSERT INTO produtos
+            (nome, tipo, quantidade, preco, estoqueMinimo, corredor, prateleira, posicao)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+        """;
 
         try (Connection conn = ConnectionFactory.createConnectionToSQLServer();
              PreparedStatement pstm = conn.prepareStatement(sql)) {
@@ -25,7 +29,6 @@ public class ProdutoDAO {
             pstm.setString(6, produto.getCorredor());
             pstm.setString(7, produto.getPrateleira());
             pstm.setString(8, produto.getPosicao());
-
 
             pstm.executeUpdate();
         } catch (Exception e) {
@@ -49,9 +52,9 @@ public class ProdutoDAO {
                 produto.setQuantidade(rset.getInt("quantidade"));
                 produto.setPreco(rset.getDouble("preco"));
                 produto.setEstoqueMinimo(rset.getInt("estoqueMinimo"));
-                produto.setNome(rset.getString("corredor"));
-                produto.setNome(rset.getString("prateleira"));
-                produto.setNome(rset.getString("posicao"));
+                produto.setCorredor(rset.getString("corredor"));
+                produto.setPrateleira(rset.getString("prateleira"));
+                produto.setPosicao(rset.getString("posicao"));
 
                 produtos.add(produto);
             }
@@ -63,7 +66,12 @@ public class ProdutoDAO {
     }
 
     public void update(Produto produto) {
-        String sql = "UPDATE produtos SET nome = ?, tipo = ?, quantidade = ?, preco = ?, estoqueMinimo = ?, corredor = ?, prateleira = ?, posicao = ? WHERE id = ?";
+        String sql = """
+            UPDATE produtos
+               SET nome = ?, tipo = ?, quantidade = ?, preco = ?,
+                   estoqueMinimo = ?, corredor = ?, prateleira = ?, posicao = ?
+             WHERE id = ?
+        """;
 
         try (Connection conn = ConnectionFactory.createConnectionToSQLServer();
              PreparedStatement pstm = conn.prepareStatement(sql)) {
@@ -97,25 +105,25 @@ public class ProdutoDAO {
             e.printStackTrace();
         }
     }
-    
+
     public double getPrecoById(int id) {
-    String sql = "SELECT preco FROM produtos WHERE id = ?";
-    double preco = -1;
+        String sql = "SELECT preco FROM produtos WHERE id = ?";
+        double preco = -1;
 
-    try (Connection conn = ConnectionFactory.createConnectionToSQLServer();
-         PreparedStatement pstm = conn.prepareStatement(sql)) {
+        try (Connection conn = ConnectionFactory.createConnectionToSQLServer();
+             PreparedStatement pstm = conn.prepareStatement(sql)) {
 
-        pstm.setInt(1, id);
-        try (ResultSet rset = pstm.executeQuery()) {
-            if (rset.next()) {
-                preco = rset.getDouble("preco");
+            pstm.setInt(1, id);
+            try (ResultSet rset = pstm.executeQuery()) {
+                if (rset.next()) {
+                    preco = rset.getDouble("preco");
+                }
             }
+
+        } catch (Exception e) {
+            e.printStackTrace();
         }
 
-    } catch (Exception e) {
-        e.printStackTrace();
+        return preco;
     }
-
-    return preco;
-}
 }

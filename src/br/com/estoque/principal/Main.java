@@ -55,97 +55,93 @@ public class Main {
     }
 
     private static void cadastrarProduto(Scanner sc, ProdutoDAO dao) {
-        System.out.print("Nome do produto: ");
-        String nome = sc.nextLine();
+    System.out.print("Nome do produto: ");
+    String nome = sc.nextLine();
 
-        System.out.print("Tipo do produto: ");
-        String tipo = sc.nextLine();
+    System.out.print("Tipo do produto: ");
+    String tipo = sc.nextLine();
 
-        System.out.print("Quantidade: ");
-        int quantidade = sc.nextInt();
+    System.out.print("Quantidade: ");
+    int quantidade = sc.nextInt();
+    sc.nextLine();
 
-        System.out.print("Preço: ");
-        double preco = sc.nextDouble();
+    System.out.print("Preço: ");
+    double preco = sc.nextDouble();
+    sc.nextLine();
 
-        System.out.print("Estoque mínimo: ");
-        int estoqueMin = sc.nextInt();
+    System.out.print("Estoque mínimo: ");
+    int estoqueMin = sc.nextInt();
+    sc.nextLine();
 
-        System.out.print("Corredor que se encontra o produto: ");
-        String corredor = sc.nextLine();
+    System.out.print("Corredor que se encontra o produto: ");
+    String corredor = sc.nextLine();
 
-        System.out.print("Prateleira que se encontra o produto: ");
-        String prateleira = sc.nextLine();
+    System.out.print("Prateleira que se encontra o produto: ");
+    String prateleira = sc.nextLine();
 
-        System.out.print("Posição que se encontra o produto: ");
-        String posicao = sc.nextLine();
+    System.out.print("Posição que se encontra o produto: ");
+    String posicao = sc.nextLine();
 
+    Produto produto = new Produto();
+    produto.setNome(nome);
+    produto.setTipo(tipo);
+    produto.setQuantidade(quantidade);
+    produto.setPreco(preco);
+    produto.setEstoqueMinimo(estoqueMin);
+    produto.setCorredor(corredor);
+    produto.setPrateleira(prateleira);
+    produto.setPosicao(posicao);
 
-
-
-
-
-        sc.nextLine(); 
-
-        Produto produto = new Produto();
-        produto.setNome(nome);
-        produto.setTipo(tipo);
-        produto.setQuantidade(quantidade);
-        produto.setPreco(preco);
-        produto.setEstoqueMinimo(estoqueMin);
-        produto.setCorredor(corredor);
-        produto.setPrateleira(prateleira);
-        produto.setPosicao(posicao);
-
-        dao.save(produto);
-        System.out.println("Produto cadastrado com sucesso!");
-    }
+    dao.save(produto);
+    System.out.println("Produto cadastrado com sucesso!");
+}
 
     private static void atualizarProduto(Scanner sc, ProdutoDAO dao) {
-        System.out.print("ID do produto a atualizar: ");
-        int id = sc.nextInt();
-        sc.nextLine();
+    System.out.print("ID do produto a atualizar: ");
+    int id = sc.nextInt();
+    sc.nextLine();
 
-        System.out.print("Novo nome: ");
-        String nome = sc.nextLine();
+    System.out.print("Novo nome: ");
+    String nome = sc.nextLine();
 
-        System.out.print("Novo tipo: ");
-        String tipo = sc.nextLine();
+    System.out.print("Novo tipo: ");
+    String tipo = sc.nextLine();
 
-        System.out.print("Nova quantidade: ");
-        int quantidade = sc.nextInt();
+    System.out.print("Nova quantidade: ");
+    int quantidade = sc.nextInt();
+    sc.nextLine();
 
-        System.out.print("Novo preço: ");
-        int preco = sc.nextInt();
+    System.out.print("Novo preço: ");
+    double preco = sc.nextDouble();
+    sc.nextLine();
 
-        System.out.print("Novo estoque mínimo: ");
-        int estoqueMin = sc.nextInt();
+    System.out.print("Novo estoque mínimo: ");
+    int estoqueMin = sc.nextInt();
+    sc.nextLine();
 
-        System.out.print("Novo corredor que se encontra o produto: ");
-        String corredor = sc.nextLine();
+    System.out.print("Novo corredor do produto: ");
+    String corredor = sc.nextLine();
 
-        System.out.print("Nova prateleira que se encontra o produto: ");
-        String prateleira = sc.nextLine();
+    System.out.print("Nova prateleira do produto: ");
+    String prateleira = sc.nextLine();
 
-        System.out.print("Nova prateleira que se encontra o produto: ");
-        String posicao = sc.nextLine();
+    System.out.print("Nova posição do produto: ");
+    String posicao = sc.nextLine();
 
-        sc.nextLine();
+    Produto produto = new Produto();
+    produto.setId(id);
+    produto.setNome(nome);
+    produto.setTipo(tipo);
+    produto.setQuantidade(quantidade);
+    produto.setPreco(preco);
+    produto.setEstoqueMinimo(estoqueMin);
+    produto.setCorredor(corredor);
+    produto.setPrateleira(prateleira);
+    produto.setPosicao(posicao);
 
-        Produto produto = new Produto();
-        produto.setId(id);
-        produto.setNome(nome);
-        produto.setTipo(tipo);
-        produto.setQuantidade(quantidade);
-        produto.setPreco(preco);
-        produto.setEstoqueMinimo(estoqueMin);
-        produto.setCorredor(corredor);
-        produto.setPrateleira(prateleira);
-        produto.setPosicao(posicao);
-
-        dao.update(produto);
-        System.out.println("Produto atualizado com sucesso!");
-    }
-
+    dao.update(produto);
+    System.out.println("Produto atualizado com sucesso!");
+}
     private static void deletarProduto(Scanner sc, ProdutoDAO dao) {
         System.out.print("ID do produto a deletar: ");
         int id = sc.nextInt();
