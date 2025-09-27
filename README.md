@@ -44,4 +44,4 @@ CESAR School
 
 #### 2️⃣ Screencast do Sistema
 - Vídeo demonstrando o funcionamento do sistema implementado.  
-- [🎥 Assista ao vídeo da Entrega 2](link-do-youtube)
+- [🎥 Assista ao vídeo da Entrega 2](https://youtu.be/vX8AhF9hjbo)
