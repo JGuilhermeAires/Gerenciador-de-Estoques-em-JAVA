@@ -8,16 +8,22 @@ public class Produto {
     private int quantidade;
     private double preco;
     private int estoqueMinimo;
+    private String corredor;
+    private String prateleira;
+    private String posicao;
 
     public Produto() {}
 
-    public Produto(int id, String nome, String tipo, int quantidade, double preco , int estoqueMinimo) {
+    public Produto(int id, String nome, String tipo, int quantidade, double preco , int estoqueMinimo, String corredor, String prateleira, String posicao) {
         this.id = id;
         this.nome = nome;
         this.tipo = tipo;
         this.quantidade = quantidade;
         this.preco = preco;
         this.estoqueMinimo = estoqueMinimo;
+        this.corredor = corredor;
+        this.prateleira = prateleira;
+        this.posicao = posicao;
     }
 
     public int getId() { 
@@ -60,6 +66,24 @@ public class Produto {
     public void setEstoqueMinimo(int estoqueMinimo) { 
         this.estoqueMinimo = estoqueMinimo; 
     }
+    public String getCorredor(){
+        return corredor;
+    }
+    public void setCorredor(String corredor){
+        this.corredor = corredor;
+    }
+    public String getPrateleira(){
+        return prateleira;
+    }
+    public void setPrateleira(String prateleira){
+        this.prateleira = prateleira;
+    }
+    public String getPosicao(){
+        return posicao;
+    }
+    public void setPosicao(String posicao){
+        this.posicao = posicao;
+    }
 
     @Override
     public String toString() {
@@ -70,6 +94,9 @@ public class Produto {
                 ", quantidade=" + quantidade +
                 ", preco=" + preco +
                 ", estoqueMinimo=" + estoqueMinimo +
+                ", corredor=" + corredor +
+                ", prateleira=" + prateleira +
+                ", posicao=" + posicao +
                 '}';
     }
 }

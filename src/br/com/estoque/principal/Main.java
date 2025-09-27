@@ -69,6 +69,21 @@ public class Main {
 
         System.out.print("Estoque mínimo: ");
         int estoqueMin = sc.nextInt();
+
+        System.out.print("Corredor que se encontra o produto: ");
+        String corredor = sc.nextLine();
+
+        System.out.print("Prateleira que se encontra o produto: ");
+        String prateleira = sc.nextLine();
+
+        System.out.print("Posição que se encontra o produto: ");
+        String posicao = sc.nextLine();
+
+
+
+
+
+
         sc.nextLine(); 
 
         Produto produto = new Produto();
@@ -77,6 +92,9 @@ public class Main {
         produto.setQuantidade(quantidade);
         produto.setPreco(preco);
         produto.setEstoqueMinimo(estoqueMin);
+        produto.setCorredor(corredor);
+        produto.setPrateleira(prateleira);
+        produto.setPosicao(posicao);
 
         dao.save(produto);
         System.out.println("Produto cadastrado com sucesso!");
@@ -101,6 +119,16 @@ public class Main {
 
         System.out.print("Novo estoque mínimo: ");
         int estoqueMin = sc.nextInt();
+
+        System.out.print("Novo corredor que se encontra o produto: ");
+        String corredor = sc.nextLine();
+
+        System.out.print("Nova prateleira que se encontra o produto: ");
+        String prateleira = sc.nextLine();
+
+        System.out.print("Nova prateleira que se encontra o produto: ");
+        String posicao = sc.nextLine();
+
         sc.nextLine();
 
         Produto produto = new Produto();
@@ -110,6 +138,9 @@ public class Main {
         produto.setQuantidade(quantidade);
         produto.setPreco(preco);
         produto.setEstoqueMinimo(estoqueMin);
+        produto.setCorredor(corredor);
+        produto.setPrateleira(prateleira);
+        produto.setPosicao(posicao);
 
         dao.update(produto);
         System.out.println("Produto atualizado com sucesso!");
@@ -137,7 +168,10 @@ public class Main {
                     " | Tipo: " + p.getTipo() +
                     " | Quantidade: " + p.getQuantidade() +
                     " | Preço: " + p.getPreco() +
-                    " | Estoque Mínimo: " + p.getEstoqueMinimo()
+                    " | Estoque Mínimo: " + p.getEstoqueMinimo() +
+                    " | Corredor: " + p.getCorredor() +
+                    " | Prateleira: " + p.getPrateleira() +
+                    " | Posição: " + p.getPosicao()
                 );
             }
         }
