@@ -38,7 +38,7 @@ CESAR School
 
 #### 1️⃣ Issue Tracker
 - Documento PDF demonstrando os erros durante o desenvolvimento.
-- [Demonstrando problemas da Entrega 2](ProblemasEnfrentados.pdf)
+- [Demonstrando problemas da Entrega 2](ProblemasProjetoJava.pdf)
 
 ---
 
