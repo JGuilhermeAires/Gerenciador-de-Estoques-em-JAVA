@@ -17,8 +17,8 @@ CESAR School
 ### 🚀 Entrega 1
 
 #### 1️⃣ Histórias de Usuário
-- Documento PDF com as 8 histórias de usuário no padrão BDD.  
-- [📄 Clique aqui para acessar as histórias](Historias%20do%20usuário%20Seção%201.pdf)
+- Quadro Trello com as histórias de usuário no padrão BDD.  
+- [📄 Clique aqui para acessar o quadro Trello](https://trello.com/invite/b/68da875e47d7176df60a5274/ATTIae81c9bbb997afebcff6825082ba72f083E8F966/sistema-de-gerenciamento-de-estoques)
 
 ---
 
