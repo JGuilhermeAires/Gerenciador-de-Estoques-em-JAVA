@@ -20,8 +20,9 @@ public class Main {
             System.out.println("2 - Atualizar produto");
             System.out.println("3 - Deletar produto");
             System.out.println("4 - Listar todos os produtos");
-            System.out.println("5 - Calcular desconto");
-            System.out.println("6 - Sair");
+            System.out.println("5 - Listar todos os produtos abaixo do estoque mínimo");
+            System.out.println("6 - Calcular desconto");
+            System.out.println("7 - Sair");
             System.out.print("Escolha uma opção: ");
 
             int opcao = sc.nextInt();
@@ -41,9 +42,12 @@ public class Main {
                     listarProdutos(dao);
                     break;
                 case 5:
-                    aplicarDesconto(sc, dao);
+                    ProdutosAbaixoEstoqueMinimo(dao);
                     break;
                 case 6:
+                    aplicarDesconto(sc, dao);
+                    break;
+                case 7:
                     executando = false;
                     System.out.println("Saindo do sistema...");
                     break;
@@ -190,5 +194,25 @@ public class Main {
     System.out.printf("Preço original: R$ %.2f%n", preco);
     System.out.printf("Preço com %.2f%% de desconto: R$ %.2f%n", desconto, valorFinal);
 }
-
+    private static void ProdutosAbaixoEstoqueMinimo(ProdutoDAO dao) {
+        List<Produto> produtos = dao.getProdutosAbaixoEstoqueMinimo();
+        if (produtos.isEmpty()) {
+            System.out.println("Nenhum produto abaixo do estoque minimo.");
+        } else {
+            System.out.println("\n=== Lista de Produtos ===");
+            for (Produto p : produtos) {
+                System.out.println(
+                    "ID: " + p.getId() +
+                    " | Nome: " + p.getNome() +
+                    " | Tipo: " + p.getTipo() +
+                    " | Quantidade: " + p.getQuantidade() +
+                    " | Preço: " + p.getPreco() +
+                    " | Estoque Mínimo: " + p.getEstoqueMinimo() +
+                    " | Corredor: " + p.getCorredor() +
+                    " | Prateleira: " + p.getPrateleira() +
+                    " | Posição: " + p.getPosicao()
+                );
+            }
+        }
+    }
 }

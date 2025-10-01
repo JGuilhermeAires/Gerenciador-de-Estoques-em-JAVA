@@ -126,4 +126,34 @@ public class ProdutoDAO {
 
         return preco;
     }
+
+    public List<Produto> getProdutosAbaixoEstoqueMinimo(){
+    String sql = "SELECT * FROM produtos WHERE quantidade < estoqueMinimo";
+    List<Produto> produtos = new ArrayList<>();
+     try (Connection conn = ConnectionFactory.createConnectionToSQLServer();
+             PreparedStatement pstm = conn.prepareStatement(sql);
+             ResultSet rset = pstm.executeQuery()) {
+
+            while (rset.next()) {
+                Produto produto = new Produto();
+                produto.setId(rset.getInt("id"));
+                produto.setNome(rset.getString("nome"));
+                produto.setTipo(rset.getString("tipo"));
+                produto.setQuantidade(rset.getInt("quantidade"));
+                produto.setPreco(rset.getDouble("preco"));
+                produto.setEstoqueMinimo(rset.getInt("estoqueMinimo"));
+                produto.setCorredor(rset.getString("corredor"));
+                produto.setPrateleira(rset.getString("prateleira"));
+                produto.setPosicao(rset.getString("posicao"));
+
+                produtos.add(produto);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return produtos;
+    }
+   
+
 }
