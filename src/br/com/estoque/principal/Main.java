@@ -20,9 +20,10 @@ public class Main {
             System.out.println("2 - Atualizar produto");
             System.out.println("3 - Deletar produto");
             System.out.println("4 - Listar todos os produtos");
-            System.out.println("5 - Listar todos os produtos abaixo do estoque mínimo");
-            System.out.println("6 - Calcular desconto");
-            System.out.println("7 - Sair");
+            System.out.println("5 - Listar apenas um produto");
+            System.out.println("6 - Listar todos os produtos abaixo do estoque mínimo");
+            System.out.println("7 - Calcular desconto");
+            System.out.println("8 - Sair");
             System.out.print("Escolha uma opção: ");
 
             int opcao = sc.nextInt();
@@ -42,12 +43,15 @@ public class Main {
                     listarProdutos(dao);
                     break;
                 case 5:
+                    produtoById(sc ,dao);
+                    break;
+                    case 6:
                     ProdutosAbaixoEstoqueMinimo(dao);
                     break;
-                case 6:
+                case 7:
                     aplicarDesconto(sc, dao);
                     break;
-                case 7:
+                case 8:
                     executando = false;
                     System.out.println("Saindo do sistema...");
                     break;
@@ -215,4 +219,27 @@ public class Main {
             }
         }
     }
+   private static void produtoById(Scanner sc, ProdutoDAO dao) {
+    System.out.print("Digite o ID do produto: ");
+    int id = sc.nextInt();
+    sc.nextLine();
+
+    Produto p = dao.getProdutoById(id);
+    if (p != null) {
+        System.out.println("\n=== Produto encontrado ===");
+        System.out.println(
+            "ID: " + p.getId() +
+            " | Nome: " + p.getNome() +
+            " | Tipo: " + p.getTipo() +
+            " | Quantidade: " + p.getQuantidade() +
+            " | Preço: " + p.getPreco() +
+            " | Estoque Mínimo: " + p.getEstoqueMinimo() +
+            " | Corredor: " + p.getCorredor() +
+            " | Prateleira: " + p.getPrateleira() +
+            " | Posição: " + p.getPosicao()
+        );
+    } else {
+        System.out.println("Produto não encontrado.");
+    }
+}
 }
