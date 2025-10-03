@@ -6,6 +6,8 @@ import br.com.estoque.model.Produto;
 import java.util.List;
 import java.util.Scanner;
 
+import br.com.estoque.reports.PrimeiroPDF;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -24,6 +26,7 @@ public class Main {
             System.out.println("6 - Listar todos os produtos abaixo do estoque mínimo");
             System.out.println("7 - Calcular desconto");
             System.out.println("8 - Sair");
+            System.out.println("9 - Gerar relatório PDF");
             System.out.print("Escolha uma opção: ");
 
             int opcao = sc.nextInt();
@@ -57,6 +60,9 @@ public class Main {
                     break;
                 default:
                     System.out.println("Opção inválida!");
+                    case 9:
+                     gerarPdf();
+                     break;
             }
         }
         sc.close();
@@ -219,7 +225,7 @@ public class Main {
             }
         }
     }
-   private static void produtoById(Scanner sc, ProdutoDAO dao) {
+    private static void produtoById(Scanner sc, ProdutoDAO dao) {
     System.out.print("Digite o ID do produto: ");
     int id = sc.nextInt();
     sc.nextLine();
@@ -242,4 +248,8 @@ public class Main {
         System.out.println("Produto não encontrado.");
     }
 }
+    private static void gerarPdf() {
+    new PrimeiroPDF();
+}
+
 }
