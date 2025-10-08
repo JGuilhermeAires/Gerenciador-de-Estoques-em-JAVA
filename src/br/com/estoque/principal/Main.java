@@ -1,18 +1,71 @@
 package br.com.estoque.principal;
 
 import br.com.estoque.dao.ProdutoDAO;
+import br.com.estoque.dao.UsuarioDAO;
 import br.com.estoque.model.Produto;
+import br.com.estoque.model.Usuario;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.Scanner;
 
+import br.com.estoque.reports.EstoqueMinimoPDF;
 import br.com.estoque.reports.PrimeiroPDF;
 
 public class Main {
-
-    public static void main(String[] args) {
-        ProdutoDAO dao = new ProdutoDAO();
+       public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        UsuarioDAO usuarioDAO = new UsuarioDAO();
+
+        boolean executando = true;
+
+        while (executando) {
+            System.out.println("\n====== SISTEMA DE ESTOQUE ======");
+            System.out.println("1 - Fazer cadastro");
+            System.out.println("2 - Fazer login");
+            System.out.println("3 - Sair");
+            System.out.print("Escolha uma opção: ");
+
+            int opc = sc.nextInt();
+            sc.nextLine();
+
+            switch (opc) {
+                case 1:
+                    cadastrarUsuario(sc, usuarioDAO);
+                    break;
+                case 2:
+                   if (fazerLogin(sc, usuarioDAO)) {
+                     System.out.println("\nLogin realizado com sucesso!");
+                     menuPrincipal(sc);
+                } else {
+                    System.out.println("\nEmail ou senha incorretos!");
+                }
+                break;
+                case 3:
+                    executando = false;
+                    System.out.println("Saindo do sistema...");
+                    break;
+                default:
+                    System.out.println("Opção inválida!");
+            }
+        }
+
+        sc.close();
+    }
+
+    private static boolean fazerLogin(Scanner sc, UsuarioDAO dao) {
+        System.out.print("Informe seu email: ");
+        String email = sc.nextLine();
+
+        System.out.print("Informe sua senha: ");
+        String senha = sc.nextLine();
+
+        Optional<Usuario> usuario = dao.findByEmailAndSenha(email, senha);
+        return usuario.isPresent();
+    }
+
+    public static void menuPrincipal(Scanner sc) {
+        ProdutoDAO dao = new ProdutoDAO();
 
         boolean executando = true;
 
@@ -25,8 +78,9 @@ public class Main {
             System.out.println("5 - Listar apenas um produto");
             System.out.println("6 - Listar todos os produtos abaixo do estoque mínimo");
             System.out.println("7 - Calcular desconto");
-             System.out.println("8 - Gerar relatório de proodutos em PDF");
-            System.out.println("9 - Sair");
+            System.out.println("8 - Gerar relatório de proodutos em PDF");
+            System.out.println("9 - Gerar relatório de proodutos abaixo do estoque minimo em PDF");
+            System.out.println("10 - Sair");
             System.out.print("Escolha uma opção: ");
 
             int opcao = sc.nextInt();
@@ -57,7 +111,10 @@ public class Main {
                      case 8:
                      gerarPdf();
                      break;
-                case 9:
+                     case 9:
+                     EstoqueMinimoPDF();
+                     break;
+                case 10:
                     executando = false;
                     System.out.println("Saindo do sistema...");
                     break;
@@ -65,7 +122,6 @@ public class Main {
                     System.out.println("Opção inválida!");
             }
         }
-        sc.close();
     }
 
     private static void cadastrarProduto(Scanner sc, ProdutoDAO dao) {
@@ -108,6 +164,25 @@ public class Main {
 
     dao.save(produto);
     System.out.println("Produto cadastrado com sucesso!");
+}
+
+private static void cadastrarUsuario(Scanner sc, UsuarioDAO dao){
+    System.out.print("Informe seu nome:");
+    String nome = sc.nextLine();
+
+    System.out.print("Informe seu email:");
+    String email = sc.nextLine();
+
+    System.out.print("Informe sua senha:");
+    String senha = sc.nextLine();
+
+    Usuario usuario = new Usuario();
+    usuario.setNome(nome);
+    usuario.setEmail(email);
+    usuario.setSenha(senha);
+
+    dao.save(usuario);
+    System.out.println("Usuario cadastrado com sucesso!");
 }
 
     private static void atualizarProduto(Scanner sc, ProdutoDAO dao) {
@@ -251,5 +326,8 @@ public class Main {
     private static void gerarPdf() {
     new PrimeiroPDF();
 }
+    private static void EstoqueMinimoPDF() {
+        new EstoqueMinimoPDF();
+    }
 
 }
