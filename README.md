@@ -37,8 +37,8 @@ CESAR School
 ### 🚀 Entrega 2
 
 #### 1️⃣ Issue Tracker
-- Documento PDF demonstrando os erros durante o desenvolvimento.
-- [Demonstrando problemas da Entrega 2](ProblemasProjetoJava.pdf)
+- Quadro trello com os problemas enfrentados durante o desenvolvimento .
+- [Demonstrando problemas da Entrega 2](https://trello.com/invite/b/68da875e47d7176df60a5274/ATTIae81c9bbb997afebcff6825082ba72f083E8F966/sistema-de-gerenciamento-de-estoques)
 
 ---
 
