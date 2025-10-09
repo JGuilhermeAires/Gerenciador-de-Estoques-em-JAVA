@@ -4,6 +4,7 @@ import br.com.estoque.dao.ProdutoDAO;
 import br.com.estoque.dao.UsuarioDAO;
 import br.com.estoque.model.Produto;
 import br.com.estoque.model.Usuario;
+import br.com.service.Email;
 
 import java.util.List;
 import java.util.Optional;
@@ -34,13 +35,14 @@ public class Main {
                     cadastrarUsuario(sc, usuarioDAO);
                     break;
                 case 2:
-                   if (fazerLogin(sc, usuarioDAO)) {
-                     System.out.println("\nLogin realizado com sucesso!");
-                     menuPrincipal(sc);
-                } else {
-                    System.out.println("\nEmail ou senha incorretos!");
+             Optional<Usuario> usuarioLogado = fazerLogin(sc, usuarioDAO);
+             if (usuarioLogado.isPresent()) {
+            System.out.println("\nLogin realizado com sucesso!");
+            menuPrincipal(sc, usuarioLogado.get());
+          } else {
+            System.out.println("\nEmail ou senha incorretos!");
                 }
-                break;
+    break;
                 case 3:
                     executando = false;
                     System.out.println("Saindo do sistema...");
@@ -53,18 +55,17 @@ public class Main {
         sc.close();
     }
 
-    private static boolean fazerLogin(Scanner sc, UsuarioDAO dao) {
-        System.out.print("Informe seu email: ");
-        String email = sc.nextLine();
+    private static Optional<Usuario> fazerLogin(Scanner sc, UsuarioDAO dao) {
+    System.out.print("Informe seu email: ");
+    String email = sc.nextLine();
 
-        System.out.print("Informe sua senha: ");
-        String senha = sc.nextLine();
+    System.out.print("Informe sua senha: ");
+    String senha = sc.nextLine();
 
-        Optional<Usuario> usuario = dao.findByEmailAndSenha(email, senha);
-        return usuario.isPresent();
-    }
+    return dao.findByEmailAndSenha(email, senha);
+}
 
-    public static void menuPrincipal(Scanner sc) {
+    public static void menuPrincipal(Scanner sc, Usuario usuario) {
         ProdutoDAO dao = new ProdutoDAO();
 
         boolean executando = true;
@@ -103,7 +104,7 @@ public class Main {
                     produtoById(sc ,dao);
                     break;
                     case 6:
-                    ProdutosAbaixoEstoqueMinimo(dao);
+                    ProdutosAbaixoEstoqueMinimo(dao, usuario);
                     break;
                 case 7:
                     aplicarDesconto(sc, dao);
@@ -183,6 +184,12 @@ private static void cadastrarUsuario(Scanner sc, UsuarioDAO dao){
 
     dao.save(usuario);
     System.out.println("Usuario cadastrado com sucesso!");
+
+   Email.enviarEmail(
+    usuario.getEmail(),
+    "Bem-vindo ao Sistema de Estoque",
+    "Olá " + usuario.getNome() + ",\n\nSeu cadastro no sistema foi realizado com sucesso!\n\nAtenciosamente,\nEquipe do ItemFlow"
+);
 }
 
     private static void atualizarProduto(Scanner sc, ProdutoDAO dao) {
@@ -279,7 +286,7 @@ private static void cadastrarUsuario(Scanner sc, UsuarioDAO dao){
     System.out.printf("Preço original: R$ %.2f%n", preco);
     System.out.printf("Preço com %.2f%% de desconto: R$ %.2f%n", desconto, valorFinal);
 }
-    private static void ProdutosAbaixoEstoqueMinimo(ProdutoDAO dao) {
+    private static void ProdutosAbaixoEstoqueMinimo(ProdutoDAO dao, Usuario usuario) {
         List<Produto> produtos = dao.getProdutosAbaixoEstoqueMinimo();
         if (produtos.isEmpty()) {
             System.out.println("Nenhum produto abaixo do estoque minimo.");
@@ -298,6 +305,19 @@ private static void cadastrarUsuario(Scanner sc, UsuarioDAO dao){
                     " | Posição: " + p.getPosicao()
                 );
             }
+            String mensagem = "Atenção! Existem produtos abaixo do estoque mínimo.\n\n";
+        for (Produto p : produtos) {
+            mensagem += "- " + p.getNome() + " (Qtd: " + p.getQuantidade() +
+                        ", Mínimo: " + p.getEstoqueMinimo() + ")\n";
+        }
+
+       Email.enviarEmail(
+    usuario.getEmail(),
+    "⚠️ Alerta: Produtos abaixo do estoque mínimo",
+    mensagem
+);
+
+System.out.println("\n📧 E-mail de alerta enviado para " + usuario.getEmail());
         }
     }
     private static void produtoById(Scanner sc, ProdutoDAO dao) {
