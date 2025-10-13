@@ -1,9 +1,6 @@
 {
     "java.project.referencedLibraries": [
         "lib/**/*.jar",
-        "lab/mssql-jdbc-13.2.0.jre11.jar",
-        "lab/openpdf-3.0.0.jar",
-        "lab/javax.mail-1.6.2.jar",
-        "lab/javax.activation-1.2.0.jar"
+        "lab/*.jar",
     ]
 }

@@ -1,0 +1,20 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Main (Sistema de Estoque - Console)",
+            "request": "launch",
+            "mainClass": "br.com.estoque.principal.Main",
+            "projectName": "Projeto JAVA_b3263b45"
+        },
+        {
+            "type": "java",
+            "name": "MainApp (Interface JavaFX)",
+            "request": "launch",
+            "mainClass": "br.com.estoque.principal.MainApp",
+            "projectName": "Projeto JAVA_b3263b45",
+            "vmArgs": "--module-path \"C:/javafx-sdk-21.0.8/lib\" --add-modules javafx.controls,javafx.fxml" // Evita erro de runing
+        }
+    ]
+}
