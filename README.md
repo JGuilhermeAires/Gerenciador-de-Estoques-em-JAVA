@@ -45,3 +45,17 @@ CESAR School
 #### 2️⃣ Screencast do Sistema
 - Vídeo demonstrando o funcionamento do sistema implementado.  
 - [🎥 Assista ao vídeo da Entrega 2](https://youtu.be/vX8AhF9hjbo)
+
+---
+
+### 🚀 Entrega 3
+
+#### 1️⃣ Screencast do Sistema (Atualizado)
+- Novo screencast demonstrando o sistema funcionando, com ênfase nas novas histórias de usuário implementadas.  
+- [🎥 Clique aqui para assistir ao vídeo da Entrega 3](https://youtu.be/SEU_LINK_AQUI)
+
+---
+
+#### 2️⃣ Screencast da Execução dos Testes 🧪
+- Screencast demonstrando a execução dos testes automatizados do sistema.  
+- [🎥 Clique aqui para assistir à execução dos testes](https://youtu.be/Ww4LjV-9F2c)
