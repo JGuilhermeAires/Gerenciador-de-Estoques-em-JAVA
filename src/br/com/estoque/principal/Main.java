@@ -25,7 +25,7 @@ public class Main {
         boolean executando = true;
 
         while (executando) {
-            System.out.println("\n====== SISTEMA DE ESTOQUE ======");
+            System.out.println("\n====== ItemFlow ======");
             System.out.println("1 - Fazer cadastro");
             System.out.println("2 - Fazer login");
             System.out.println("3 - Sair");
@@ -355,8 +355,8 @@ private static void AlimentosVencidosPDF(){
             System.out.println("5 - Listar apenas um produto");
             System.out.println("6 - Listar todos os produtos abaixo do estoque mínimo");
             System.out.println("7 - Calcular desconto");
-            System.out.println("8 - Gerar relatório de proodutos em PDF");
-            System.out.println("9 - Gerar relatório de proodutos abaixo do estoque minimo em PDF");
+            System.out.println("8 - Gerar relatório de produtos em PDF");
+            System.out.println("9 - Gerar relatório de produtos abaixo do estoque minimo em PDF");
             System.out.println("10 - Sair");
             System.out.print("Escolha uma opção: ");
 
