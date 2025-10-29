@@ -2,5 +2,10 @@
     "java.project.referencedLibraries": [
         "lib/**/*.jar",
         "lab/*.jar",
+        "c:\\Users\\jg201\\Downloads\\junit-platform-commons-1.10.0.jar",
+        "c:\\Users\\jg201\\Downloads\\junit-jupiter-engine-5.10.0.jar",
+        "c:\\Users\\jg201\\Downloads\\junit-jupiter-api-5.10.0.jar",
+        "c:\\Users\\jg201\\Downloads\\junit-platform-engine-1.10.0.jar",
+        "c:\\Users\\jg201\\Downloads\\junit-platform-console-standalone-1.10.0.jar"
     ]
 }
