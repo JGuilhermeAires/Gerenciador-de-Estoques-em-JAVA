@@ -36,8 +36,8 @@ CESAR School
 ### 🚀 Entrega 2
 
 #### 1️⃣ Issue Tracker
-- Quadro trello com os problemas enfrentados durante o desenvolvimento da entrega 2.
-- [Demonstrando problemas da Entrega 2](https://trello.com/invite/b/68da875e47d7176df60a5274/ATTIae81c9bbb997afebcff6825082ba72f083E8F966/sistema-de-gerenciamento-de-estoques)
+- Print da tela de problemas durante o desenvolvimento da entrega 2.
+- [Imagem demonstrando os erros enfrentados durante a entrega 2](https://trello.com/invite/b/68da875e47d7176df60a5274/ATTIae81c9bbb997afebcff6825082ba72f083E8F966/sistema-de-gerenciamento-de-estoques)
 
 ---
 
@@ -62,6 +62,6 @@ CESAR School
 ---
 
 #### 3️⃣ Issue Tracker
-- Print da tela de problemas durante o desenvolvimento.
+- Print da tela de problemas durante o desenvolvimento da entrega 3.
 ![Imagem demostrando os erros enfrentados durante a entrega 3](IMG/PrintIssue.png)
 
