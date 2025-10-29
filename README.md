@@ -64,5 +64,5 @@ CESAR School
 
 #### 3️⃣ Issue Tracker
 - Print da tela de problemas durante codificação.
-- [Demonstrando problemas da Entrega 3](https://trello.com/invite/b/68da875e47d7176df60a5274/ATTIae81c9bbb997afebcff6825082ba72f083E8F966/sistema-de-gerenciamento-de-estoques)
+- [Demonstrando problemas da Entrega 3](IMG/PrintIssue.png)
 
