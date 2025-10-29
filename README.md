@@ -63,6 +63,6 @@ CESAR School
 ---
 
 #### 3️⃣ Issue Tracker
-- Print da tela de problemas durante codificação.
-- [Demonstrando problemas da Entrega 3](IMG/PrintIssue.png)
+- Print da tela de problemas durante o desenvolvimento.
+![Imagem demostrando os erros enfrentados durante a entrega 3](IMG/PrintIssue.png)
 
