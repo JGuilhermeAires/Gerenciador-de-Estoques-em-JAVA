@@ -74,11 +74,12 @@ public class MenuEstoqueAlimentos {
                 AlimentosVencidosPDF();
                 break;
             case 10:
-                executando = false;
-                System.out.println("Saindo do menu de alimentos...");
-                break;
-            default:
-                System.out.println("Opção inválida!");
+                    executando = false;
+                    System.out.println("Voltando para o menu de escolha de estoque...");
+                    MenuEscolherTipoEstoque.exibir(sc, usuario);
+                    break;
+                default:
+                    System.out.println("Opção inválida!");
         }
     }
 }

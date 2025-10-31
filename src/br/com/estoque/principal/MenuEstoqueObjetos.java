@@ -27,7 +27,7 @@ public class MenuEstoqueObjetos {
             System.out.println("7 - Calcular desconto");
             System.out.println("8 - Gerar relatório de produtos em PDF");
             System.out.println("9 - Gerar relatório de produtos abaixo do estoque minimo em PDF");
-            System.out.println("10 - Sair");
+            System.out.println("10 - Voltar");
             System.out.print("Escolha uma opção: ");
 
             int opcao = sc.nextInt();
@@ -62,10 +62,11 @@ public class MenuEstoqueObjetos {
                      EstoqueMinimoPDF();
                      break;
                 case 10:
-                    executando = false;
-                    System.out.println("Saindo do sistema...");
+                      executando = false;
+                    System.out.println("Voltando para o menu de escolha de estoque...");
+                    MenuEscolherTipoEstoque.exibir(sc, usuario);
                     break;
-                default:
+                    default:
                     System.out.println("Opção inválida!");
             }
         }
