@@ -1,4 +1,4 @@
-package br.com.estoque.principal;
+package br.com.estoque.menu;
 
 import java.time.LocalDate;
 import java.util.List;

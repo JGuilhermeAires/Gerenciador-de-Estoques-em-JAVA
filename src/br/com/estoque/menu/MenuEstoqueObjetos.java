@@ -1,4 +1,4 @@
-package br.com.estoque.principal;
+package br.com.estoque.menu;
 
 import java.util.List;
 import java.util.Scanner;
