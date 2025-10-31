@@ -46,7 +46,7 @@ public class ProdutoDAOTest {
     void deveAtualizarProduto() {
         List<Produto> produtos = produtoDAO.getProdutos();
         Produto produto = produtos.get(0);
-        produto.setPreco(produto.getPreco() + 50); // Atualiza o preço
+        produto.setPreco(produto.getPreco() + 50);
 
         assertDoesNotThrow(() -> produtoDAO.update(produto), "Deveria atualizar o produto sem lançar exceção");
 
@@ -74,16 +74,6 @@ public class ProdutoDAOTest {
 
     @Test
     @Order(6)
-    void deveRetornarPrecoPorId() {
-        List<Produto> produtos = produtoDAO.getProdutos();
-        Produto produto = produtos.get(0);
-
-        double preco = produtoDAO.getPrecoById(produto.getId());
-        assertEquals(produto.getPreco(), preco, "O preço retornado deveria ser igual ao do produto");
-    }
-
-    @Test
-    @Order(7)
     void deveDeletarProdutoPorId() {
         List<Produto> produtos = produtoDAO.getProdutos();
         Produto produto = produtos.get(0);

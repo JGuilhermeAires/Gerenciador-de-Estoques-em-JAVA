@@ -24,10 +24,9 @@ public class MenuEstoqueObjetos {
             System.out.println("4 - Listar todos os produtos");
             System.out.println("5 - Listar apenas um produto");
             System.out.println("6 - Listar todos os produtos abaixo do estoque mínimo");
-            System.out.println("7 - Calcular desconto");
-            System.out.println("8 - Gerar relatório de produtos em PDF");
-            System.out.println("9 - Gerar relatório de produtos abaixo do estoque minimo em PDF");
-            System.out.println("10 - Voltar");
+            System.out.println("7 - Gerar relatório de produtos em PDF");
+            System.out.println("8 - Gerar relatório de produtos abaixo do estoque minimo em PDF");
+            System.out.println("9 - Voltar");
             System.out.print("Escolha uma opção: ");
 
             int opcao = sc.nextInt();
@@ -52,16 +51,13 @@ public class MenuEstoqueObjetos {
                     case 6:
                     ProdutosAbaixoEstoqueMinimo(dao, usuario);
                     break;
-                case 7:
-                    aplicarDesconto(sc, dao);
-                    break;
-                     case 8:
+                     case 7:
                      gerarPdf();
                      break;
-                     case 9:
+                     case 8:
                      EstoqueMinimoPDF();
                      break;
-                case 10:
+                case 9:
                       executando = false;
                     System.out.println("Voltando para o menu de escolha de estoque...");
                     MenuEscolherTipoEstoque.exibir(sc, usuario);
@@ -190,24 +186,6 @@ private static void atualizarProduto(Scanner sc, ProdutoDAO dao) {
             }
         }
     }
-    private static void aplicarDesconto(Scanner sc, ProdutoDAO dao) {
-    System.out.print("Digite o ID do produto: ");
-    int id = sc.nextInt();
-
-    double preco = dao.getPrecoById(id);
-
-    if (preco == -1) {
-        System.out.println("Produto não encontrado!");
-        return;
-    }
-
-    System.out.print("Percentual de desconto (%): ");
-    double desconto = sc.nextDouble();
-
-    double valorFinal = preco - (preco * (desconto / 100.0));
-    System.out.printf("Preço original: R$ %.2f%n", preco);
-    System.out.printf("Preço com %.2f%% de desconto: R$ %.2f%n", desconto, valorFinal);
-}
     private static void ProdutosAbaixoEstoqueMinimo(ProdutoDAO dao, Usuario usuario) {
         List<Produto> produtos = dao.getProdutosAbaixoEstoqueMinimo();
         if (produtos.isEmpty()) {
