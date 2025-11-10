@@ -35,15 +35,15 @@ CESAR School
 
 ### 🚀 Entrega 2
 
-#### 1️⃣ Issue Tracker
-- Print da tela de problemas durante o desenvolvimento da entrega 2.
- ![Imagem demonstrando os erros enfrentados durante a entrega 2](IMG/ErrosEntrega2.png)
-
----
-
 #### 2️⃣ Screencast do Sistema
 - Vídeo demonstrando o funcionamento do sistema implementado.  
 - [🎥 Assista ao vídeo da Entrega 2](https://youtu.be/vX8AhF9hjbo)
+
+---
+
+#### 1️⃣ Issue Tracker
+- Print da tela de problemas durante o desenvolvimento da entrega 2.
+ ![Imagem demonstrando os erros enfrentados durante a entrega 2](IMG/ErrosEntrega2.png)
 
 ---
 
