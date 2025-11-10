@@ -63,7 +63,7 @@ CESAR School
 
 #### 3️⃣ Issue Tracker
 - Print da tela de problemas durante o desenvolvimento da entrega 3.
-![Imagem demostrando os erros enfrentados durante a entrega 3](IMG/ErrosEntrega4.png)
+![Imagem demostrando os erros enfrentados durante a entrega 3](IMG/ErrosEntrega3.png)
 
 ---
 
@@ -83,5 +83,5 @@ CESAR School
 
 #### 3️⃣ Issue Tracker
 - Print da tela de problemas durante o desenvolvimento da entrega 4.
-![Imagem demostrando os erros enfrentados durante a entrega 3](IMG/ErrosEntrega3.png)
+![Imagem demostrando os erros enfrentados durante a entrega 3](IMG/ErrosEntrega4.png)
 
