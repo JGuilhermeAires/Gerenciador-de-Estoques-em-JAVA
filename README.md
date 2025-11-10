@@ -65,3 +65,23 @@ CESAR School
 - Print da tela de problemas durante o desenvolvimento da entrega 3.
 ![Imagem demostrando os erros enfrentados durante a entrega 3](IMG/ErrosEntrega3.png)
 
+---
+
+### 🚀 Entrega 4
+
+#### 1️⃣ Screencast do Sistema (Atualizado)
+- Novo screencast demonstrando o sistema funcionando, com ênfase nas novas histórias de usuário implementadas.  
+- [🎥 Clique aqui para assistir ao vídeo da Entrega 3](https://youtu.be/vh-QQZ4hIw4)
+
+---
+
+#### 2️⃣ Screencast da Execução dos Testes 🧪
+- Screencast demonstrando a execução dos testes automatizados do sistema.  
+- [🎥 Clique aqui para assistir à execução dos testes](https://youtu.be/Ww4LjV-9F2c)
+
+---
+
+#### 3️⃣ Issue Tracker
+- Print da tela de problemas durante o desenvolvimento da entrega 4.
+![Imagem demostrando os erros enfrentados durante a entrega 3](IMG/ErrosEntrega3.png)
+
