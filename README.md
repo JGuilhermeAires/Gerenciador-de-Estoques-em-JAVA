@@ -71,7 +71,7 @@ CESAR School
 
 #### 1️⃣ Screencast do Sistema (Atualizado)
 - Novo screencast demonstrando o sistema funcionando, com ênfase nas novas histórias de usuário implementadas.  
-- [🎥 Clique aqui para assistir ao vídeo da Entrega 3](https://youtu.be/QkA-BdRC2VE)
+- [🎥 Clique aqui para assistir ao vídeo da Entrega 4](https://youtu.be/QkA-BdRC2VE)
 
 ---
 
