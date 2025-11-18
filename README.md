@@ -77,7 +77,7 @@ CESAR School
 
 #### 2️⃣ Screencast da Execução dos Testes 🧪
 - Screencast demonstrando a execução dos testes automatizados do sistema.  
-- [🎥 Clique aqui para assistir à execução dos testes](https://youtu.be/Ww4LjV-9F2c)
+- [🎥 Clique aqui para assistir à execução dos testes](https://youtu.be/U98Ev2LYQy0)
 
 ---
 
